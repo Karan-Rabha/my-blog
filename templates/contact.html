@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <h1 class="heading-text">Contact Me</h1>
+        <div class="post-container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+              <p class="success-text">{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {{ wtf.quick_form(form, novalidate=True, button_map={'send': 'primary'}) }}           
+        </div>
+    </div>
+    
+{% endblock %}

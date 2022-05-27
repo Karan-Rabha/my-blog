@@ -1,0 +1,74 @@
+body{
+    background-color: #f3f6f7;
+}
+
+.nav-button{
+    padding: 0 5px;
+}
+
+/* font-family: 'Merriweather', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Ubuntu Mono', monospace; */
+.post-card{
+    margin: 0 10% 3%;
+}
+
+.heading-text{
+    padding: 20px;
+    text-align: left;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+.card-container{
+    padding: 0 15% 3%;
+}
+
+.error-text{
+    color: red;
+}
+
+.success-text{
+    font-weight: 600;
+    font-size: x-large;
+    color: #04455a;
+}
+
+.post-button {
+    margin-left: 85%;
+    margin-bottom: 1%;
+}
+
+.post-link{
+    text-decoration: none;
+    color: #04455a;
+}
+
+.post-title{
+    font-weight: bolder;
+}
+
+.post-subtitle{
+    font-weight: 300;
+    font-size: larger;
+}
+
+.post-container{
+    padding: 0 20%;
+}
+
+.heading-text-post{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.text-body{
+    text-align: center;
+    padding: 0 15%;
+    font-size: large;
+    line-height: 2rem;
+}
+
+.form-group{
+    margin: 0 3% 2% 0;
+}

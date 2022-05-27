@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <h1 class="heading-text">My Blog</h1>
+
+        <div class="container-fluid">
+            <a href="{{ url_for('create_post') }}"><button type="button" class="btn btn-primary btn-sm post-button">create post</button></a>
+
+            <div class="post-container">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                  <p class="error-text">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %} 
+            </div>
+
+            {% for post in all_posts %}
+            <div class="card post-card">
+                <div class="card-body">
+                    <p>{{ post.date }}</p>
+                    <blockquote class="blockquote mb-0">
+                        <a href="{{ url_for('post', post_id = post.id) }}" class="post-link"> 
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h3 class="post-subtitle">{{ post.subtitle }}</h3><br>
+                        </a>
+                        <footer class="blockquote-footer">Posted by <cite title="Source Title">{{ post.posted_by.name }}</cite></footer>
+                    </blockquote>
+                    {% if current_user.id == 1 or current_user.id == 2 %}
+                    <a href="{{ url_for('delete_post', post_id = post.id) }}">Delete This Post</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>    
+    </div>
+{% endblock %}
+
